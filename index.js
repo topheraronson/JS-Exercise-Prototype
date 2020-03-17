@@ -77,8 +77,57 @@ person.eat('apple');
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
+// function Car(model, milesPerGallon) {
+//   this.model = model;
+//   this.milesPerGallon = milesPerGallon;
+//   this.tank = 0;
+//   this.odometer = 0;
+// }
 
+// Car.prototype.fill = function(gallons) {
+//   this.tank += gallons;
+// }
+
+// Car.prototype.drive = function(distance) {
+//   this.odometer += distance;
+//   // this.tank -= distance/this.milesPerGallon;
+
+//   if(this.tank - distance/this.milesPerGallon < 0) {
+    
+//     let tempDistance = distance;
+
+//     for(let i = 0; i <= distance; i++) {
+//       if()
+//     }
+//   }
+// }
+
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
+}
+
+Car.prototype.fill = function(gallons) {
+  this.tank += gallons;
+}
+
+Car.prototype.drive = function(distance) {
+
+  if(this.tank - distance / this.milesPerGallon < 0) {
+
+    for(let i = 0; i <= distance; i++) {
+      if(this.tank - i/this.milesPerGallon < 0) {
+        this.tank -= (i - 1)/this.milesPerGallon;
+        this.odometer += (i - 1);
+        return `I ran out of fuel at ${this.odometer} miles!`;
+      }
+    }
+  } else {
+    this.tank -= distance/this.milesPerGallon;
+    this.odometer += distance;
+  }
 }
 
 /*
