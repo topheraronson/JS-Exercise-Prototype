@@ -153,10 +153,10 @@ Baby.prototype.play = function() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. A binding to the global window
+  2. Binding to an object calling a method when dot notation is used
+  3. Binding when a new object is created through a constructor function
+  4. Binding to an object when told which object to bind to.
 */
 
 
